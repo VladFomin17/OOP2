@@ -10,6 +10,8 @@ public delegate void HashtableChanged(string message);
 public class HousingDepartmentHashtable
 {
     public Hashtable Table { get; }
+    
+    public int Count { get { return Table.Count; } }
 
     public event HashtableChanged ItemAdded;
     public event HashtableChanged ItemRemoved;
@@ -59,5 +61,10 @@ public class HousingDepartmentHashtable
             throw new KeyDoesNotExistException(key);
         }
         return (HousingDepartment)Table[key];
+    }
+    
+    public bool Contains(int key)
+    {
+        return Table.ContainsKey(key);
     }
 }
