@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{A6553C12-FDCD-4719-AFBF-D3259F7C6178}|OOP2\\OOP2.csproj|solutionrelative:oop2\\src\\service\\housingdepartmentrandomgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6553C12-FDCD-4719-AFBF-D3259F7C6178}|OOP2\\OOP2.csproj|c:\\users\\\u0432\u043B\u0430\u0434\\riderprojects\\oop2\\oop2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A6553C12-FDCD-4719-AFBF-D3259F7C6178}|OOP2\\OOP2.csproj|C:\\Users\\\u0432\u043B\u0430\u0434\\RiderProjects\\OOP2\\oop2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A6553C12-FDCD-4719-AFBF-D3259F7C6178}|OOP2\\OOP2.csproj|solutionrelative:oop2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -116,7 +116,7 @@
               "RelativeDocumentMoniker": "OOP2\\src\\service\\HousingDepartmentRandomGenerator.cs",
               "ToolTip": "C:\\Users\\\u0432\u043B\u0430\u0434\\RiderProjects\\OOP2\\OOP2\\src\\service\\HousingDepartmentRandomGenerator.cs",
               "RelativeToolTip": "OOP2\\src\\service\\HousingDepartmentRandomGenerator.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwDcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-10T20:31:22.066Z",
               "EditorCaption": ""
@@ -130,8 +130,7 @@
               "ToolTip": "C:\\Users\\\u0432\u043B\u0430\u0434\\RiderProjects\\OOP2\\OOP2\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "OOP2\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T20:17:16.456Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2026-02-10T20:17:16.456Z"
             },
             {
               "$type": "Document",
@@ -143,8 +142,7 @@
               "RelativeToolTip": "OOP2\\Form1.cs",
               "ViewState": "AgIAAIoAAAAAAAAAAAAuwJMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T20:17:45.964Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T20:17:45.964Z"
             }
           ]
         }

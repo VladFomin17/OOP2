@@ -74,8 +74,8 @@ public class HousingDepartment
         int employeeCount
     ) : this(district, housingDepartmentNumber)
     {
-        _residents = residents;
-        _paidResidentsCount = paidResidentsCount;
+        Residents = residents;
+        PaidResidentsCount = paidResidentsCount;
         Tariff = tariff;
         Balance = balance;
         EmployeeCount = employeeCount;

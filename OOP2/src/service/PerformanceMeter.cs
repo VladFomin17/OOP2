@@ -73,7 +73,7 @@ public class PerformanceMeter
         stopwatch.Stop();
         return (int)stopwatch.ElapsedMilliseconds;
     }
-
+    
     public static int ArraySelectSequential()
     {
         HousingDepartmentList.Clear();
@@ -112,7 +112,7 @@ public class PerformanceMeter
         stopwatch.Stop();
         return (int)stopwatch.ElapsedMilliseconds;
     }
-
+    
     public static int ArraySelectRandom()
     {
         HousingDepartmentList.Clear();
@@ -131,4 +131,3 @@ public class PerformanceMeter
         return (int)stopwatch.ElapsedMilliseconds;
     }
 }
-
