@@ -30,10 +30,6 @@ partial class Form1
     private void InitializeComponent()
     {
         label1 = new Label();
-        label2 = new Label();
-        label3 = new Label();
-        label4 = new Label();
-        next = new Button();
         label5 = new Label();
         label6 = new Label();
         addButton = new Button();
@@ -53,65 +49,31 @@ partial class Form1
         keyInput = new NumericUpDown();
         tbEvents = new TextBox();
         lvMeasure = new ListView();
+        collectionName = new ColumnHeader();
         timeInsert = new ColumnHeader();
         randomAccessTime = new ColumnHeader();
         seqAccessTime = new ColumnHeader();
-        collectionName = new ColumnHeader();
         measureButton = new Button();
+        next = new Button();
+        label2 = new Label();
+        label3 = new Label();
+        label4 = new Label();
+        tableLayoutPanel1 = new TableLayoutPanel();
         ((System.ComponentModel.ISupportInitialize)objectGrid).BeginInit();
         ((System.ComponentModel.ISupportInitialize)keyInput).BeginInit();
+        tableLayoutPanel1.SuspendLayout();
         SuspendLayout();
         // 
         // label1
         // 
-        label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        label1.Location = new Point(30, 21);
+        label1.Dock = DockStyle.Fill;
+        label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+        label1.Location = new Point(3, 0);
         label1.Name = "label1";
-        label1.Size = new Size(391, 64);
+        label1.Size = new Size(525, 47);
         label1.TabIndex = 0;
         label1.Text = "Лабораторная работа 2";
         label1.TextAlign = ContentAlignment.MiddleCenter;
-        // 
-        // label2
-        // 
-        label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        label2.Location = new Point(30, 85);
-        label2.Name = "label2";
-        label2.Size = new Size(391, 64);
-        label2.TabIndex = 1;
-        label2.Text = "Вариант 4 - ЖЭК";
-        label2.TextAlign = ContentAlignment.MiddleCenter;
-        // 
-        // label3
-        // 
-        label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        label3.Location = new Point(30, 143);
-        label3.Name = "label3";
-        label3.Size = new Size(391, 100);
-        label3.TabIndex = 2;
-        label3.Text = "Выполнили: Федоров, Фомин";
-        label3.TextAlign = ContentAlignment.MiddleCenter;
-        // 
-        // label4
-        // 
-        label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        label4.Location = new Point(25, 226);
-        label4.Name = "label4";
-        label4.Size = new Size(391, 67);
-        label4.TabIndex = 3;
-        label4.Text = "Группа 24ВП1";
-        label4.TextAlign = ContentAlignment.MiddleCenter;
-        // 
-        // next
-        // 
-        next.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        next.Location = new Point(139, 352);
-        next.Name = "next";
-        next.Size = new Size(179, 51);
-        next.TabIndex = 4;
-        next.Text = "Далее";
-        next.UseVisualStyleBackColor = true;
-        next.Click += button1_Click;
         // 
         // label5
         // 
@@ -172,7 +134,7 @@ partial class Form1
         objectGrid.AllowUserToResizeRows = false;
         objectGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         objectGrid.Columns.AddRange(new DataGridViewColumn[] { key, District, ResidentsAmount, PaidAmount, Tariff, Balance, EmployeeCount });
-        objectGrid.Location = new Point(37, 33);
+        objectGrid.Location = new Point(24, 30);
         objectGrid.Name = "objectGrid";
         objectGrid.RowHeadersVisible = false;
         objectGrid.RowHeadersWidth = 51;
@@ -280,6 +242,7 @@ partial class Form1
         tbEvents.ScrollBars = ScrollBars.Vertical;
         tbEvents.Size = new Size(413, 313);
         tbEvents.TabIndex = 19;
+        tbEvents.Visible = false;
         // 
         // lvMeasure
         // 
@@ -291,25 +254,29 @@ partial class Form1
         lvMeasure.UseCompatibleStateImageBehavior = false;
         lvMeasure.Visible = false;
         // 
+        // collectionName
+        // 
+        collectionName.Name = "collectionName";
+        collectionName.Text = "Коллекция";
+        collectionName.Width = 315;
+        // 
         // timeInsert
         // 
+        timeInsert.Name = "timeInsert";
         timeInsert.Text = "Время вставки";
         timeInsert.Width = 315;
         // 
         // randomAccessTime
         // 
+        randomAccessTime.Name = "randomAccessTime";
         randomAccessTime.Text = "Время случайной выборки";
         randomAccessTime.Width = 315;
         // 
         // seqAccessTime
         // 
+        seqAccessTime.Name = "seqAccessTime";
         seqAccessTime.Text = "Время последовательной выборки";
         seqAccessTime.Width = 315;
-        // 
-        // collectionName
-        // 
-        collectionName.Text = "Коллекция";
-        collectionName.Width = 315;
         // 
         // measureButton
         // 
@@ -322,12 +289,82 @@ partial class Form1
         measureButton.Visible = false;
         measureButton.Click += OnMeasureClick;
         // 
+        // next
+        // 
+        next.Anchor = AnchorStyles.Top;
+        next.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
+        next.Location = new Point(144, 203);
+        next.Margin = new Padding(0);
+        next.Name = "next";
+        next.Size = new Size(242, 65);
+        next.TabIndex = 4;
+        next.Text = "Далее";
+        next.UseVisualStyleBackColor = true;
+        next.Click += button1_Click;
+        // 
+        // label2
+        // 
+        label2.Dock = DockStyle.Fill;
+        label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+        label2.Location = new Point(3, 124);
+        label2.Name = "label2";
+        label2.Size = new Size(525, 79);
+        label2.TabIndex = 1;
+        label2.Text = "Вариант 4 - ЖЭК";
+        label2.TextAlign = ContentAlignment.MiddleCenter;
+        // 
+        // label3
+        // 
+        label3.Dock = DockStyle.Fill;
+        label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+        label3.Location = new Point(3, 86);
+        label3.Name = "label3";
+        label3.Size = new Size(525, 38);
+        label3.TabIndex = 2;
+        label3.Text = "Выполнили: Федоров, Фомин";
+        label3.TextAlign = ContentAlignment.MiddleCenter;
+        // 
+        // label4
+        // 
+        label4.Dock = DockStyle.Fill;
+        label4.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+        label4.Location = new Point(3, 47);
+        label4.Name = "label4";
+        label4.Size = new Size(525, 39);
+        label4.TabIndex = 3;
+        label4.Text = "Группа 24ВП1";
+        label4.TextAlign = ContentAlignment.MiddleCenter;
+        // 
+        // tableLayoutPanel1
+        // 
+        tableLayoutPanel1.ColumnCount = 1;
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.16959059F));
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 98.83041F));
+        tableLayoutPanel1.Controls.Add(label2, 2, 3);
+        tableLayoutPanel1.Controls.Add(label3, 2, 2);
+        tableLayoutPanel1.Controls.Add(label4, 2, 1);
+        tableLayoutPanel1.Controls.Add(label1, 2, 0);
+        tableLayoutPanel1.Controls.Add(next, 0, 4);
+        tableLayoutPanel1.Location = new Point(0, 0);
+        tableLayoutPanel1.Margin = new Padding(0);
+        tableLayoutPanel1.Name = "tableLayoutPanel1";
+        tableLayoutPanel1.RowCount = 5;
+        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 54.782608F));
+        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.217392F));
+        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 79F));
+        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 235F));
+        tableLayoutPanel1.Size = new Size(531, 439);
+        tableLayoutPanel1.TabIndex = 22;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = SystemColors.Control;
         ClientSize = new Size(1309, 689);
+        Controls.Add(tableLayoutPanel1);
         Controls.Add(measureButton);
         Controls.Add(lvMeasure);
         Controls.Add(tbEvents);
@@ -341,17 +378,14 @@ partial class Form1
         Controls.Add(addButton);
         Controls.Add(label6);
         Controls.Add(label5);
-        Controls.Add(next);
-        Controls.Add(label4);
-        Controls.Add(label3);
-        Controls.Add(label2);
-        Controls.Add(label1);
         Location = new Point(15, 15);
         Margin = new Padding(3, 4, 3, 4);
+        MaximizeBox = false;
         Name = "Form1";
-        Text = "Form1";
+        Text = "ЖЭК";
         ((System.ComponentModel.ISupportInitialize)objectGrid).EndInit();
         ((System.ComponentModel.ISupportInitialize)keyInput).EndInit();
+        tableLayoutPanel1.ResumeLayout(false);
         ResumeLayout(false);
         PerformLayout();
     }
@@ -385,10 +419,6 @@ partial class Form1
     private System.Windows.Forms.Label label5;
 
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.Label label4;
-    private System.Windows.Forms.Button next;
 
 
     #endregion
@@ -399,4 +429,9 @@ partial class Form1
     private ColumnHeader randomAccessTime;
     private ColumnHeader seqAccessTime;
     private Button measureButton;
+    private Button next;
+    private Label label2;
+    private Label label3;
+    private Label label4;
+    private TableLayoutPanel tableLayoutPanel1;
 }

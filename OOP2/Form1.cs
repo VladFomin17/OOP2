@@ -12,8 +12,8 @@ namespace OOP2;
 
 public partial class Form1 : Form
 {
-    const int START_WINDOW_HEIGHT = 599;
-    const int START_WINDOW_WIDTH = 582;
+    const int START_WINDOW_HEIGHT = 451;
+    const int START_WINDOW_WIDTH = 531;
     const int MAIN_WINDOW_HEIGHT = 736;
     const int MAIN_WINDOW_WIDTH = 1327;
 
@@ -25,6 +25,8 @@ public partial class Form1 : Form
     {
         InitializeComponent();
         Size = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
+        MaximumSize = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
+        MinimumSize = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
         _hashtable = new HousingDepartmentHashtable();
         _listener = new HashtableEventListener(_hashtable, tbEvents);
         lvMeasure.View = View.Details;
@@ -32,13 +34,15 @@ public partial class Form1 : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
+        tableLayoutPanel1.Visible = false;
         label1.Visible = false;
         label2.Visible = false;
         label3.Visible = false;
         label4.Visible = false;
         next.Visible = false;
         Size = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT);
-        label5.Visible = true;
+        MaximumSize = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT);
+        MinimumSize = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT); label5.Visible = true;
         label7.Visible = true;
         tbEvents.Visible = true;
         label6.Visible = true;
@@ -55,6 +59,7 @@ public partial class Form1 : Form
 
     private void prev_Click(object sender, EventArgs e)
     {
+        tableLayoutPanel1.Visible = true;
         label1.Visible = true;
         label2.Visible = true;
         label3.Visible = true;
@@ -142,18 +147,40 @@ public partial class Form1 : Form
         }
     }
 
-    private void OnMeasureClick(object sender, EventArgs e)
+    private async void OnMeasureClick(object sender, EventArgs e)
     {
+        measureButton.Enabled = false;
+        measureButton.Text = "Загрузка...";
         lvMeasure.Items.Clear();
-        ListViewItem listViewItemHashTable = new ListViewItem("Хэш-таблица");
-        listViewItemHashTable.SubItems.Add(PerformanceMeter.InsertInHashtable().ToString());
-        listViewItemHashTable.SubItems.Add(PerformanceMeter.HashtableSelectSequential().ToString());
-        listViewItemHashTable.SubItems.Add(PerformanceMeter.HashtableSelectRandom().ToString());
-        lvMeasure.Items.Add(listViewItemHashTable);
-        ListViewItem listViewItemArray = new ListViewItem("Массив");
-        listViewItemArray.SubItems.Add(PerformanceMeter.InsertInArray().ToString());
-        listViewItemArray.SubItems.Add(PerformanceMeter.ArraySelectSequential().ToString());
-        listViewItemArray.SubItems.Add(PerformanceMeter.ArraySelectRandom().ToString());
-        lvMeasure.Items.Add(listViewItemArray);
+
+        var (hashResults, arrayResults) = await Task.Run(() =>
+        {
+            var hashResults = new
+            {
+                Insert = PerformanceMeter.InsertInHashtable().ToString(),
+                Seq = PerformanceMeter.HashtableSelectSequential().ToString(),
+                Rand = PerformanceMeter.HashtableSelectRandom().ToString()
+            };
+
+            var arrayResults = new
+            {
+                Insert = PerformanceMeter.InsertInArray().ToString(),
+                Seq = PerformanceMeter.ArraySelectSequential().ToString(),
+                Rand = PerformanceMeter.ArraySelectRandom().ToString()
+            };
+
+            return (hashResults, arrayResults);
+        });
+
+        ListViewItem itemHash = new ListViewItem("Хэш-таблица");
+        itemHash.SubItems.AddRange(new[] { hashResults.Insert, hashResults.Seq, hashResults.Rand });
+        lvMeasure.Items.Add(itemHash);
+
+        ListViewItem itemArray = new ListViewItem("Массив");
+        itemArray.SubItems.AddRange(new[] { arrayResults.Insert, arrayResults.Seq, arrayResults.Rand });
+        lvMeasure.Items.Add(itemArray);
+
+        measureButton.Text = "Измерить";
+        measureButton.Enabled = true;
     }
 }
