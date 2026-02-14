@@ -42,7 +42,8 @@ public partial class Form1 : Form
         next.Visible = false;
         Size = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT);
         MaximumSize = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT);
-        MinimumSize = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT); label5.Visible = true;
+        MinimumSize = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT); 
+        label5.Visible = true;
         label7.Visible = true;
         tbEvents.Visible = true;
         label6.Visible = true;
@@ -55,6 +56,7 @@ public partial class Form1 : Form
         removeButton.Visible = true;
         prevButton.Visible = true;
         measureButton.Visible = true;
+        tbEvents.Visible = true;
     }
 
     private void prev_Click(object sender, EventArgs e)
@@ -66,6 +68,8 @@ public partial class Form1 : Form
         label4.Visible = true;
         next.Visible = true;
         Size = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
+        MaximumSize = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
+        MinimumSize = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT); 
         label5.Visible = false;
         label7.Visible = false;
         tbEvents.Visible = true;
@@ -79,6 +83,7 @@ public partial class Form1 : Form
         removeButton.Visible = false;
         prevButton.Visible = false;
         measureButton.Visible = false;
+        tbEvents.Visible = false;
     }
 
     private void exit_Click(object sender, EventArgs e)
