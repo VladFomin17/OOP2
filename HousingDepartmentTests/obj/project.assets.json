@@ -1729,11 +1729,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\влад\\RiderProjects\\OOP2\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
+      "projectUniqueName": "C:\\Users\\влад\\RiderProjects\\OOP6\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
       "projectName": "HousingDepartmentTests",
-      "projectPath": "C:\\Users\\влад\\RiderProjects\\OOP2\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
+      "projectPath": "C:\\Users\\влад\\RiderProjects\\OOP6\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
       "packagesPath": "C:\\Users\\влад\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\влад\\RiderProjects\\OOP2\\HousingDepartmentTests\\obj\\",
+      "outputPath": "C:\\Users\\влад\\RiderProjects\\OOP6\\HousingDepartmentTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1754,8 +1754,8 @@
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
           "projectReferences": {
-            "C:\\Users\\влад\\RiderProjects\\OOP2\\OOP2\\OOP2.csproj": {
-              "projectPath": "C:\\Users\\влад\\RiderProjects\\OOP2\\OOP2\\OOP2.csproj"
+            "C:\\Users\\влад\\RiderProjects\\OOP6\\OOP2\\OOP2.csproj": {
+              "projectPath": "C:\\Users\\влад\\RiderProjects\\OOP6\\OOP2\\OOP2.csproj"
             }
           }
         }

@@ -14,12 +14,15 @@ public partial class Form1 : Form
 {
     const int START_WINDOW_HEIGHT = 451;
     const int START_WINDOW_WIDTH = 531;
-    const int MAIN_WINDOW_HEIGHT = 736;
-    const int MAIN_WINDOW_WIDTH = 1327;
+    const int MAIN_WINDOW_HEIGHT = 621;
+    const int MAIN_WINDOW_WIDTH = 1086;
 
     private HousingDepartmentHashtable _hashtable;
 
     private HashtableEventListener _listener;
+    
+    private CancellationTokenSource _cts;
+    private bool _isRunning = false;
 
     public Form1()
     {
@@ -27,8 +30,6 @@ public partial class Form1 : Form
         Size = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
         MaximumSize = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
         MinimumSize = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
-        _hashtable = new HousingDepartmentHashtable();
-        _listener = new HashtableEventListener(_hashtable, tbEvents);
         lvMeasure.View = View.Details;
     }
 
@@ -44,19 +45,18 @@ public partial class Form1 : Form
         MaximumSize = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT);
         MinimumSize = new Size(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT); 
         label5.Visible = true;
-        label7.Visible = true;
-        tbEvents.Visible = true;
         label6.Visible = true;
         exitButton.Visible = true;
-        objectGrid.Visible = true;
         lvMeasure.Visible = true;
-        keyInput.Visible = true;
         label8.Visible = true;
-        addButton.Visible = true;
-        removeButton.Visible = true;
         prevButton.Visible = true;
         measureButton.Visible = true;
-        tbEvents.Visible = true;
+        tbFunction.Visible = true;
+        tbTime.Visible = true;
+        displayTimeButton.Visible = true;
+        calculateFunction.Visible = true;
+        functionArguementInput.Visible = true;
+        label9.Visible = true;
     }
 
     private void prev_Click(object sender, EventArgs e)
@@ -71,85 +71,23 @@ public partial class Form1 : Form
         MaximumSize = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT);
         MinimumSize = new Size(START_WINDOW_WIDTH, START_WINDOW_HEIGHT); 
         label5.Visible = false;
-        label7.Visible = false;
-        tbEvents.Visible = true;
         label6.Visible = false;
         exitButton.Visible = false;
-        objectGrid.Visible = false;
         lvMeasure.Visible = false;
-        keyInput.Visible = false;
         label8.Visible = false;
-        addButton.Visible = false;
-        removeButton.Visible = false;
         prevButton.Visible = false;
         measureButton.Visible = false;
-        tbEvents.Visible = false;
+        tbFunction.Visible = false;
+        tbTime.Visible = false;
+        displayTimeButton.Visible = false;
+        calculateFunction.Visible = false;
+        label9.Visible = false;
+        functionArguementInput.Visible = false;
     }
 
     private void exit_Click(object sender, EventArgs e)
     {
         Close();
-    }
-
-    private void OnAddClick(object sender, EventArgs e)
-    {
-        try
-        {
-            int key = (int)keyInput.Value;
-
-            _hashtable.AddRandomByKey(key);
-            RefreshObjectGrid();
-        }
-        catch (Exception exception)
-        {
-            NativeMessageBox.MessageBox(
-                0,
-                exception.Message,
-                "Ошибка",
-                NativeMessageBox.MB_OK | NativeMessageBox.MB_ICONERROR
-            );
-        }
-    }
-
-    private void OnRemoveClick(object sender, EventArgs e)
-    {
-        try
-        {
-            int key = (int)keyInput.Value;
-
-            _hashtable.Remove(key);
-            RefreshObjectGrid();
-        }
-        catch (Exception exception)
-        {
-            NativeMessageBox.MessageBox(
-                0,
-                exception.Message,
-                "Ошибка",
-                NativeMessageBox.MB_OK | NativeMessageBox.MB_ICONERROR
-            );
-        }
-    }
-
-    private void RefreshObjectGrid()
-    {
-        objectGrid.Rows.Clear();
-
-        foreach (DictionaryEntry entry in _hashtable.Table)
-        {
-            int key = (int)entry.Key;
-            HousingDepartment hd = (HousingDepartment)entry.Value;
-
-            objectGrid.Rows.Add(
-                key,
-                hd.District,
-                hd.Residents.Length,
-                hd.PaidResidentsCount,
-                hd.Tariff,
-                hd.Balance,
-                hd.EmployeeCount
-            );
-        }
     }
 
     private async void OnMeasureClick(object sender, EventArgs e)
@@ -187,5 +125,44 @@ public partial class Form1 : Form
 
         measureButton.Text = "Измерить";
         measureButton.Enabled = true;
+    }
+
+    private async void OnCalculateClick(object sender, EventArgs e)
+    {
+        calculateFunction.Enabled = false;
+        calculateFunction.Text = "Вычисление...";
+
+        int X = (int)functionArguementInput.Value;
+        
+        tbFunction.Text = "f(x) = eˣ" + Environment.NewLine + $"x = {X}" + Environment.NewLine;
+        await FunctionCalculator.Exponent(X, tbFunction);
+        calculateFunction.Text = "Рассчитать функцию";
+        calculateFunction.Enabled = true;
+    }
+
+    private async void OnTimeDisplay(object sender, EventArgs e)
+    {
+        if (!_isRunning)
+        {
+            _cts = new CancellationTokenSource();
+            _isRunning = true;
+            displayTimeButton.Text = "Остановить";
+
+            try
+            {
+                await TimeService.ShowTimeAsync(
+                    time => tbTime.Text = time,
+                    _cts.Token);
+            }
+            catch (TaskCanceledException)
+            {
+            }
+        }
+        else
+        {
+            _cts.Cancel();
+            _isRunning = false;
+            displayTimeButton.Text = "Показать время";
+        }
     }
 }

@@ -29,119 +29,50 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        label1 = new Label();
-        label5 = new Label();
-        label6 = new Label();
-        addButton = new Button();
-        removeButton = new Button();
-        label7 = new Label();
-        objectGrid = new DataGridView();
-        key = new DataGridViewTextBoxColumn();
-        District = new DataGridViewTextBoxColumn();
-        ResidentsAmount = new DataGridViewTextBoxColumn();
-        PaidAmount = new DataGridViewTextBoxColumn();
-        Tariff = new DataGridViewTextBoxColumn();
-        Balance = new DataGridViewTextBoxColumn();
-        EmployeeCount = new DataGridViewTextBoxColumn();
-        label8 = new Label();
-        exitButton = new Button();
-        prevButton = new Button();
-        keyInput = new NumericUpDown();
-        tbEvents = new TextBox();
-        lvMeasure = new ListView();
-        collectionName = new ColumnHeader();
-        timeInsert = new ColumnHeader();
-        randomAccessTime = new ColumnHeader();
-        seqAccessTime = new ColumnHeader();
-        measureButton = new Button();
-        next = new Button();
-        label2 = new Label();
-        label3 = new Label();
-        label4 = new Label();
-        tableLayoutPanel1 = new TableLayoutPanel();
-        ((System.ComponentModel.ISupportInitialize)objectGrid).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)keyInput).BeginInit();
+        label1 = new System.Windows.Forms.Label();
+        key = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        District = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        ResidentsAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        PaidAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        Tariff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        EmployeeCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        label8 = new System.Windows.Forms.Label();
+        exitButton = new System.Windows.Forms.Button();
+        prevButton = new System.Windows.Forms.Button();
+        lvMeasure = new System.Windows.Forms.ListView();
+        collectionName = new System.Windows.Forms.ColumnHeader();
+        timeInsert = new System.Windows.Forms.ColumnHeader();
+        randomAccessTime = new System.Windows.Forms.ColumnHeader();
+        seqAccessTime = new System.Windows.Forms.ColumnHeader();
+        measureButton = new System.Windows.Forms.Button();
+        next = new System.Windows.Forms.Button();
+        label2 = new System.Windows.Forms.Label();
+        label3 = new System.Windows.Forms.Label();
+        label4 = new System.Windows.Forms.Label();
+        tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+        tbFunction = new System.Windows.Forms.TextBox();
+        label5 = new System.Windows.Forms.Label();
+        functionArguementInput = new System.Windows.Forms.NumericUpDown();
+        label6 = new System.Windows.Forms.Label();
+        calculateFunction = new System.Windows.Forms.Button();
+        displayTimeButton = new System.Windows.Forms.Button();
+        label9 = new System.Windows.Forms.Label();
+        tbTime = new System.Windows.Forms.TextBox();
         tableLayoutPanel1.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)functionArguementInput).BeginInit();
         SuspendLayout();
         // 
         // label1
         // 
-        label1.Dock = DockStyle.Fill;
-        label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-        label1.Location = new Point(3, 0);
+        label1.Dock = System.Windows.Forms.DockStyle.Fill;
+        label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+        label1.Location = new System.Drawing.Point(3, 0);
         label1.Name = "label1";
-        label1.Size = new Size(525, 47);
+        label1.Size = new System.Drawing.Size(525, 47);
         label1.TabIndex = 0;
-        label1.Text = "Лабораторная работа 2";
-        label1.TextAlign = ContentAlignment.MiddleCenter;
-        // 
-        // label5
-        // 
-        label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        label5.Location = new Point(413, 2);
-        label5.Name = "label5";
-        label5.Size = new Size(80, 28);
-        label5.TabIndex = 7;
-        label5.Text = "Объекты";
-        label5.Visible = false;
-        // 
-        // label6
-        // 
-        label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        label6.Location = new Point(1046, 2);
-        label6.Name = "label6";
-        label6.Size = new Size(80, 28);
-        label6.TabIndex = 8;
-        label6.Text = "События";
-        label6.Visible = false;
-        // 
-        // addButton
-        // 
-        addButton.Location = new Point(427, 397);
-        addButton.Name = "addButton";
-        addButton.Size = new Size(419, 32);
-        addButton.TabIndex = 9;
-        addButton.Text = "Добавить объект";
-        addButton.UseVisualStyleBackColor = true;
-        addButton.Visible = false;
-        addButton.Click += OnAddClick;
-        // 
-        // removeButton
-        // 
-        removeButton.Location = new Point(852, 395);
-        removeButton.Name = "removeButton";
-        removeButton.Size = new Size(445, 32);
-        removeButton.TabIndex = 10;
-        removeButton.Text = "Удалить объект";
-        removeButton.UseVisualStyleBackColor = true;
-        removeButton.Visible = false;
-        removeButton.Click += OnRemoveClick;
-        // 
-        // label7
-        // 
-        label7.Location = new Point(46, 401);
-        label7.Name = "label7";
-        label7.Size = new Size(117, 22);
-        label7.TabIndex = 12;
-        label7.Text = "Номер ЖЭКа";
-        label7.Visible = false;
-        // 
-        // objectGrid
-        // 
-        objectGrid.AllowUserToAddRows = false;
-        objectGrid.AllowUserToDeleteRows = false;
-        objectGrid.AllowUserToResizeColumns = false;
-        objectGrid.AllowUserToResizeRows = false;
-        objectGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        objectGrid.Columns.AddRange(new DataGridViewColumn[] { key, District, ResidentsAmount, PaidAmount, Tariff, Balance, EmployeeCount });
-        objectGrid.Location = new Point(24, 30);
-        objectGrid.Name = "objectGrid";
-        objectGrid.RowHeadersVisible = false;
-        objectGrid.RowHeadersWidth = 51;
-        objectGrid.Size = new Size(804, 313);
-        objectGrid.TabIndex = 13;
-        objectGrid.Text = "dataGridView1";
-        objectGrid.Visible = false;
+        label1.Text = "Лабораторная работа 6";
+        label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // key
         // 
@@ -194,19 +125,19 @@ partial class Form1
         // 
         // label8
         // 
-        label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        label8.Location = new Point(608, 459);
+        label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        label8.Location = new System.Drawing.Point(447, 342);
         label8.Name = "label8";
-        label8.Size = new Size(165, 28);
+        label8.Size = new System.Drawing.Size(165, 28);
         label8.TabIndex = 15;
         label8.Text = "Производительность";
         label8.Visible = false;
         // 
         // exitButton
         // 
-        exitButton.Location = new Point(1170, 650);
+        exitButton.Location = new System.Drawing.Point(921, 535);
         exitButton.Name = "exitButton";
-        exitButton.Size = new Size(127, 28);
+        exitButton.Size = new System.Drawing.Size(127, 28);
         exitButton.TabIndex = 16;
         exitButton.Text = "Выход";
         exitButton.UseVisualStyleBackColor = true;
@@ -215,41 +146,22 @@ partial class Form1
         // 
         // prevButton
         // 
-        prevButton.Location = new Point(37, 650);
+        prevButton.Location = new System.Drawing.Point(20, 533);
         prevButton.Name = "prevButton";
-        prevButton.Size = new Size(127, 28);
+        prevButton.Size = new System.Drawing.Size(127, 28);
         prevButton.TabIndex = 17;
         prevButton.Text = "Назад";
         prevButton.UseVisualStyleBackColor = true;
         prevButton.Visible = false;
         prevButton.Click += prev_Click;
         // 
-        // keyInput
-        // 
-        keyInput.Location = new Point(169, 399);
-        keyInput.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
-        keyInput.Name = "keyInput";
-        keyInput.Size = new Size(241, 27);
-        keyInput.TabIndex = 18;
-        keyInput.Visible = false;
-        // 
-        // tbEvents
-        // 
-        tbEvents.Location = new Point(865, 30);
-        tbEvents.Multiline = true;
-        tbEvents.Name = "tbEvents";
-        tbEvents.ReadOnly = true;
-        tbEvents.ScrollBars = ScrollBars.Vertical;
-        tbEvents.Size = new Size(413, 313);
-        tbEvents.TabIndex = 19;
-        tbEvents.Visible = false;
-        // 
         // lvMeasure
         // 
-        lvMeasure.Columns.AddRange(new ColumnHeader[] { collectionName, timeInsert, randomAccessTime, seqAccessTime });
-        lvMeasure.Location = new Point(37, 490);
+        lvMeasure.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { collectionName, timeInsert, randomAccessTime, seqAccessTime });
+        lvMeasure.Location = new System.Drawing.Point(20, 373);
+        lvMeasure.Margin = new System.Windows.Forms.Padding(0);
         lvMeasure.Name = "lvMeasure";
-        lvMeasure.Size = new Size(1260, 156);
+        lvMeasure.Size = new System.Drawing.Size(1028, 156);
         lvMeasure.TabIndex = 20;
         lvMeasure.UseCompatibleStateImageBehavior = false;
         lvMeasure.Visible = false;
@@ -258,31 +170,31 @@ partial class Form1
         // 
         collectionName.Name = "collectionName";
         collectionName.Text = "Коллекция";
-        collectionName.Width = 315;
+        collectionName.Width = 257;
         // 
         // timeInsert
         // 
         timeInsert.Name = "timeInsert";
         timeInsert.Text = "Время вставки";
-        timeInsert.Width = 315;
+        timeInsert.Width = 257;
         // 
         // randomAccessTime
         // 
         randomAccessTime.Name = "randomAccessTime";
         randomAccessTime.Text = "Время случайной выборки";
-        randomAccessTime.Width = 315;
+        randomAccessTime.Width = 257;
         // 
         // seqAccessTime
         // 
         seqAccessTime.Name = "seqAccessTime";
         seqAccessTime.Text = "Время последовательной выборки";
-        seqAccessTime.Width = 315;
+        seqAccessTime.Width = 257;
         // 
         // measureButton
         // 
-        measureButton.Location = new Point(622, 649);
+        measureButton.Location = new System.Drawing.Point(462, 535);
         measureButton.Name = "measureButton";
-        measureButton.Size = new Size(127, 28);
+        measureButton.Size = new System.Drawing.Size(127, 28);
         measureButton.TabIndex = 21;
         measureButton.Text = "Измерить";
         measureButton.UseVisualStyleBackColor = true;
@@ -291,12 +203,12 @@ partial class Form1
         // 
         // next
         // 
-        next.Anchor = AnchorStyles.Top;
-        next.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-        next.Location = new Point(144, 203);
-        next.Margin = new Padding(0);
+        next.Anchor = System.Windows.Forms.AnchorStyles.Top;
+        next.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        next.Location = new System.Drawing.Point(144, 203);
+        next.Margin = new System.Windows.Forms.Padding(0);
         next.Name = "next";
-        next.Size = new Size(242, 65);
+        next.Size = new System.Drawing.Size(242, 65);
         next.TabIndex = 4;
         next.Text = "Далее";
         next.UseVisualStyleBackColor = true;
@@ -304,99 +216,189 @@ partial class Form1
         // 
         // label2
         // 
-        label2.Dock = DockStyle.Fill;
-        label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-        label2.Location = new Point(3, 124);
+        label2.Dock = System.Windows.Forms.DockStyle.Fill;
+        label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+        label2.Location = new System.Drawing.Point(3, 124);
         label2.Name = "label2";
-        label2.Size = new Size(525, 79);
+        label2.Size = new System.Drawing.Size(525, 79);
         label2.TabIndex = 1;
         label2.Text = "Вариант 4 - ЖЭК";
-        label2.TextAlign = ContentAlignment.MiddleCenter;
+        label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // label3
         // 
-        label3.Dock = DockStyle.Fill;
-        label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-        label3.Location = new Point(3, 86);
+        label3.Dock = System.Windows.Forms.DockStyle.Fill;
+        label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+        label3.Location = new System.Drawing.Point(3, 86);
         label3.Name = "label3";
-        label3.Size = new Size(525, 38);
+        label3.Size = new System.Drawing.Size(525, 38);
         label3.TabIndex = 2;
         label3.Text = "Выполнили: Федоров, Фомин";
-        label3.TextAlign = ContentAlignment.MiddleCenter;
+        label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // label4
         // 
-        label4.Dock = DockStyle.Fill;
-        label4.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-        label4.Location = new Point(3, 47);
+        label4.Dock = System.Windows.Forms.DockStyle.Fill;
+        label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+        label4.Location = new System.Drawing.Point(3, 47);
         label4.Name = "label4";
-        label4.Size = new Size(525, 39);
+        label4.Size = new System.Drawing.Size(525, 39);
         label4.TabIndex = 3;
         label4.Text = "Группа 24ВП1";
-        label4.TextAlign = ContentAlignment.MiddleCenter;
+        label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // tableLayoutPanel1
         // 
         tableLayoutPanel1.ColumnCount = 1;
-        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.16959059F));
-        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
-        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 98.83041F));
+        tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.1695906F));
+        tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+        tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 98.83041F));
         tableLayoutPanel1.Controls.Add(label2, 2, 3);
         tableLayoutPanel1.Controls.Add(label3, 2, 2);
         tableLayoutPanel1.Controls.Add(label4, 2, 1);
         tableLayoutPanel1.Controls.Add(label1, 2, 0);
         tableLayoutPanel1.Controls.Add(next, 0, 4);
-        tableLayoutPanel1.Location = new Point(0, 0);
-        tableLayoutPanel1.Margin = new Padding(0);
+        tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+        tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
         tableLayoutPanel1.Name = "tableLayoutPanel1";
         tableLayoutPanel1.RowCount = 5;
-        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 54.782608F));
-        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.217392F));
-        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
-        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 79F));
-        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 235F));
-        tableLayoutPanel1.Size = new Size(531, 439);
+        tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.782608F));
+        tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.217392F));
+        tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+        tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+        tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 235F));
+        tableLayoutPanel1.Size = new System.Drawing.Size(531, 439);
         tableLayoutPanel1.TabIndex = 22;
+        // 
+        // tbFunction
+        // 
+        tbFunction.Location = new System.Drawing.Point(20, 57);
+        tbFunction.Multiline = true;
+        tbFunction.Name = "tbFunction";
+        tbFunction.ReadOnly = true;
+        tbFunction.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+        tbFunction.Size = new System.Drawing.Size(439, 172);
+        tbFunction.TabIndex = 23;
+        tbFunction.Visible = false;
+        // 
+        // label5
+        // 
+        label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        label5.Location = new System.Drawing.Point(155, 31);
+        label5.Name = "label5";
+        label5.Size = new System.Drawing.Size(168, 23);
+        label5.TabIndex = 24;
+        label5.Text = "Вычисление функции";
+        label5.Visible = false;
+        // 
+        // functionArguementInput
+        // 
+        functionArguementInput.Location = new System.Drawing.Point(121, 259);
+        functionArguementInput.Minimum = new decimal(new int[] { 100, 0, 0, -2147483648 });
+        functionArguementInput.Name = "functionArguementInput";
+        functionArguementInput.Size = new System.Drawing.Size(143, 27);
+        functionArguementInput.TabIndex = 25;
+        functionArguementInput.Visible = false;
+        // 
+        // label6
+        // 
+        label6.Location = new System.Drawing.Point(20, 261);
+        label6.Name = "label6";
+        label6.Size = new System.Drawing.Size(84, 25);
+        label6.TabIndex = 26;
+        label6.Text = "Аргумент";
+        label6.Visible = false;
+        // 
+        // calculateFunction
+        // 
+        calculateFunction.Location = new System.Drawing.Point(292, 259);
+        calculateFunction.Name = "calculateFunction";
+        calculateFunction.Size = new System.Drawing.Size(166, 26);
+        calculateFunction.TabIndex = 27;
+        calculateFunction.Text = "Вычислить";
+        calculateFunction.UseVisualStyleBackColor = true;
+        calculateFunction.Visible = false;
+        calculateFunction.Click += OnCalculateClick;
+        // 
+        // displayTimeButton
+        // 
+        displayTimeButton.Location = new System.Drawing.Point(744, 259);
+        displayTimeButton.Name = "displayTimeButton";
+        displayTimeButton.Size = new System.Drawing.Size(181, 26);
+        displayTimeButton.TabIndex = 32;
+        displayTimeButton.Text = "Показать время";
+        displayTimeButton.UseVisualStyleBackColor = true;
+        displayTimeButton.Visible = false;
+        displayTimeButton.Click += OnTimeDisplay;
+        // 
+        // label9
+        // 
+        label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        label9.Location = new System.Drawing.Point(744, 31);
+        label9.Name = "label9";
+        label9.Size = new System.Drawing.Size(181, 23);
+        label9.TabIndex = 29;
+        label9.Text = "Отображение времени";
+        label9.Visible = false;
+        // 
+        // tbTime
+        // 
+        tbTime.Location = new System.Drawing.Point(609, 57);
+        tbTime.Multiline = true;
+        tbTime.Name = "tbTime";
+        tbTime.ReadOnly = true;
+        tbTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+        tbTime.Size = new System.Drawing.Size(439, 172);
+        tbTime.TabIndex = 28;
+        tbTime.Visible = false;
         // 
         // Form1
         // 
-        AutoScaleDimensions = new SizeF(8F, 20F);
-        AutoScaleMode = AutoScaleMode.Font;
-        BackColor = SystemColors.Control;
-        ClientSize = new Size(1309, 689);
+        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        BackColor = System.Drawing.SystemColors.Control;
+        ClientSize = new System.Drawing.Size(1068, 574);
+        Controls.Add(displayTimeButton);
+        Controls.Add(label9);
+        Controls.Add(tbTime);
+        Controls.Add(calculateFunction);
+        Controls.Add(label6);
+        Controls.Add(functionArguementInput);
+        Controls.Add(label5);
+        Controls.Add(tbFunction);
         Controls.Add(tableLayoutPanel1);
         Controls.Add(measureButton);
         Controls.Add(lvMeasure);
-        Controls.Add(tbEvents);
-        Controls.Add(keyInput);
         Controls.Add(prevButton);
         Controls.Add(exitButton);
         Controls.Add(label8);
-        Controls.Add(objectGrid);
-        Controls.Add(label7);
-        Controls.Add(removeButton);
-        Controls.Add(addButton);
-        Controls.Add(label6);
-        Controls.Add(label5);
-        Location = new Point(15, 15);
-        Margin = new Padding(3, 4, 3, 4);
+        Location = new System.Drawing.Point(15, 15);
+        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         MaximizeBox = false;
-        Name = "Form1";
         Text = "ЖЭК";
-        ((System.ComponentModel.ISupportInitialize)objectGrid).EndInit();
-        ((System.ComponentModel.ISupportInitialize)keyInput).EndInit();
         tableLayoutPanel1.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)functionArguementInput).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
 
-    private System.Windows.Forms.NumericUpDown keyInput;
+    private System.Windows.Forms.Button displayTimeButton;
+    private System.Windows.Forms.Label label9;
+    private System.Windows.Forms.TextBox tbTime;
+
+    private System.Windows.Forms.Button calculateFunction;
+
+    private System.Windows.Forms.Label label6;
+
+    private System.Windows.Forms.NumericUpDown functionArguementInput;
+
+    private System.Windows.Forms.Label label5;
+
+    private System.Windows.Forms.TextBox tbFunction;
 
     private System.Windows.Forms.Button prevButton;
 
     private System.Windows.Forms.Button exitButton;
-
-    private System.Windows.Forms.Label label7;
 
     private System.Windows.Forms.DataGridViewTextBoxColumn District;
     private System.Windows.Forms.DataGridViewTextBoxColumn ResidentsAmount;
@@ -410,28 +412,20 @@ partial class Form1
 
     private System.Windows.Forms.DataGridView objectGrid;
 
-    private System.Windows.Forms.Button removeButton;
-    private System.Windows.Forms.TextBox tbEvents;
-
-    private System.Windows.Forms.Button addButton;
-
-    private System.Windows.Forms.Label label6;
-    private System.Windows.Forms.Label label5;
-
     private System.Windows.Forms.Label label1;
 
 
     #endregion
 
-    private ListView lvMeasure;
-    private ColumnHeader collectionName;
-    private ColumnHeader timeInsert;
-    private ColumnHeader randomAccessTime;
-    private ColumnHeader seqAccessTime;
-    private Button measureButton;
+    private System.Windows.Forms.ListView lvMeasure;
+    private System.Windows.Forms.ColumnHeader collectionName;
+    private System.Windows.Forms.ColumnHeader timeInsert;
+    private System.Windows.Forms.ColumnHeader randomAccessTime;
+    private System.Windows.Forms.ColumnHeader seqAccessTime;
+    private System.Windows.Forms.Button measureButton;
     private Button next;
-    private Label label2;
+    private System.Windows.Forms.Label label2;
     private Label label3;
     private Label label4;
-    private TableLayoutPanel tableLayoutPanel1;
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 }

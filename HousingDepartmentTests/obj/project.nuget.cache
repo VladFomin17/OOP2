@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "afeZq8ayhg8=",
+  "dgSpecHash": "hW7Ra0XtUeo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\влад\\RiderProjects\\OOP2\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
+  "projectFilePath": "C:\\Users\\влад\\RiderProjects\\OOP6\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\влад\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "C:\\Users\\влад\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",
@@ -27,9 +27,9 @@
       "code": "NU1608",
       "level": "Warning",
       "message": "Detected package version outside of dependency constraint: MSTest 3.6.4 requires MSTest.Analyzers (= 3.6.4) but version MSTest.Analyzers 4.1.0 was resolved.",
-      "projectPath": "C:\\Users\\влад\\RiderProjects\\OOP2\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
+      "projectPath": "C:\\Users\\влад\\RiderProjects\\OOP6\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\влад\\RiderProjects\\OOP2\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
+      "filePath": "C:\\Users\\влад\\RiderProjects\\OOP6\\HousingDepartmentTests\\HousingDepartmentTests.csproj",
       "libraryId": "MSTest.Analyzers",
       "targetGraphs": [
         "net9.0-windows7.0"
