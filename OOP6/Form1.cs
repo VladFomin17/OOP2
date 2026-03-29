@@ -10,20 +10,47 @@ using OOP6.src;
 
 namespace OOP6;
 
+/// <summary>
+/// Главная форма приложения.
+/// Отвечает за взаимодействие пользователя с системой управления ЖЭК.
+/// </summary>
 public partial class Form1 : Form
 {
+    /// <summary>Начальная высота окна.</summary>
     const int START_WINDOW_HEIGHT = 451;
+    
+    /// <summary>Начальная ширина окна.</summary>
     const int START_WINDOW_WIDTH = 531;
+        
+    /// <summary>Основная высота окна.</summary>
     const int MAIN_WINDOW_HEIGHT = 621;
+    
+    /// <summary>Основная ширина окна.</summary>
     const int MAIN_WINDOW_WIDTH = 1086;
 
+    /// <summary>
+    /// Хэш-таблица для хранения объектов типа HousingDepartment.
+    /// </summary>
     private HousingDepartmentHashtable _hashtable;
 
+    /// <summary>
+    /// Слушатель событий хэш-таблицы, используемый для отображения сообщений в интерфейсе.
+    /// </summary>
     private HashtableEventListener _listener;
     
+    /// <summary>
+    /// Источник токена отмены для управления асинхронной задачей отображения времени.
+    /// </summary>
     private CancellationTokenSource _cts;
+    
+    /// <summary>
+    /// Флаг, указывающий, выполняется ли в данный момент отображение времени.
+    /// </summary>
     private bool _isRunning = false;
 
+    /// <summary>
+    /// Конструктор формы. Инициализирует компоненты и задаёт начальные размеры окна.
+    /// </summary>
     public Form1()
     {
         InitializeComponent();
@@ -33,6 +60,10 @@ public partial class Form1 : Form
         lvMeasure.View = View.Details;
     }
 
+    /// <summary>
+    /// Обработчик нажатия кнопки перехода к основному интерфейсу.
+    /// Изменяет размеры окна и отображает элементы управления.
+    /// </summary>
     private void button1_Click(object sender, EventArgs e)
     {
         tableLayoutPanel1.Visible = false;
@@ -59,6 +90,10 @@ public partial class Form1 : Form
         label9.Visible = true;
     }
 
+    /// <summary>
+    /// Обработчик кнопки возврата к начальному экрану.
+    /// Скрывает основные элементы и возвращает исходный размер окна.
+    /// </summary>
     private void prev_Click(object sender, EventArgs e)
     {
         tableLayoutPanel1.Visible = true;
@@ -85,11 +120,20 @@ public partial class Form1 : Form
         functionArguementInput.Visible = false;
     }
 
+    /// <summary>
+    /// Обработчик кнопки выхода из приложения.
+    /// Закрывает форму.
+    /// </summary>
     private void exit_Click(object sender, EventArgs e)
     {
         Close();
     }
 
+    /// <summary>
+    /// Асинхронный обработчик измерения производительности.
+    /// Выполняет операции вставки и выборки для хэш-таблицы и массива,
+    /// выводя результаты в ListView.
+    /// </summary>
     private async void OnMeasureClick(object sender, EventArgs e)
     {
         measureButton.Enabled = false;
@@ -127,6 +171,10 @@ public partial class Form1 : Form
         measureButton.Enabled = true;
     }
 
+    /// <summary>
+    /// Асинхронный обработчик вычисления функции.
+    /// Вычисляет значение экспоненты e^x и отображает результат в текстовом поле.
+    /// </summary>
     private async void OnCalculateClick(object sender, EventArgs e)
     {
         calculateFunction.Enabled = false;
@@ -140,6 +188,10 @@ public partial class Form1 : Form
         calculateFunction.Enabled = true;
     }
 
+    /// <summary>
+    /// Асинхронный обработчик отображения системного времени.
+    /// Позволяет запускать и останавливать обновление времени с использованием CancellationToken.
+    /// </summary>
     private async void OnTimeDisplay(object sender, EventArgs e)
     {
         if (!_isRunning)

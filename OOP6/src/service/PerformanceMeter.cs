@@ -9,23 +9,50 @@ using OOP6.Src.Subject;
 
 namespace OOP6.src;
 
+/// <summary>
+/// Класс для измерения производительности различных структур данных.
+/// Позволяет сравнивать операции вставки и выборки (последовательной и случайной)
+/// для хэш-таблицы и массива.
+/// </summary>
 public class PerformanceMeter
 {
+    /// <summary>
+    /// Объект для измерения времени выполнения операций.
+    /// </summary>
     private static Stopwatch stopwatch = new Stopwatch();
+
+    /// <summary>
+    /// Генератор случайных чисел.
+    /// </summary>
     private static Random rnd = new Random();
 
+    /// <summary>
+    /// Размер тестовой выборки.
+    /// </summary>
     private const int size = 100_000;
 
-    // Для сохранения выборки
+    /// <summary>
+    /// Список для хранения результатов выборки.
+    /// </summary>
     public static List<HousingDepartment> HousingDepartmentList { get; private set; }
         = new List<HousingDepartment>();
 
+    /// <summary>
+    /// Хэш-таблица для тестирования.
+    /// </summary>
     private static HousingDepartmentHashtable hashtable =
         new HousingDepartmentHashtable();
 
+    /// <summary>
+    /// Массив для тестирования.
+    /// </summary>
     private static HousingDepartment[] housingDepartments =
         new HousingDepartment[size];
-    
+
+    /// <summary>
+    /// Измеряет время добавления элементов в хэш-таблицу.
+    /// </summary>
+    /// <returns>Время выполнения в миллисекундах.</returns>
     public static int InsertInHashtable()
     {
         hashtable = new HousingDepartmentHashtable();
@@ -42,6 +69,10 @@ public class PerformanceMeter
         return (int)stopwatch.ElapsedMilliseconds;
     }
 
+    /// <summary>
+    /// Измеряет время заполнения массива случайными объектами.
+    /// </summary>
+    /// <returns>Время выполнения в миллисекундах.</returns>
     public static int InsertInArray()
     {
         stopwatch.Reset();
@@ -56,7 +87,11 @@ public class PerformanceMeter
         stopwatch.Stop();
         return (int)stopwatch.ElapsedMilliseconds;
     }
-    
+
+    /// <summary>
+    /// Измеряет время последовательной выборки элементов из хэш-таблицы.
+    /// </summary>
+    /// <returns>Время выполнения в миллисекундах.</returns>
     public static int HashtableSelectSequential()
     {
         HousingDepartmentList.Clear();
@@ -73,7 +108,11 @@ public class PerformanceMeter
         stopwatch.Stop();
         return (int)stopwatch.ElapsedMilliseconds;
     }
-    
+
+    /// <summary>
+    /// Измеряет время последовательной выборки элементов из массива.
+    /// </summary>
+    /// <returns>Время выполнения в миллисекундах.</returns>
     public static int ArraySelectSequential()
     {
         HousingDepartmentList.Clear();
@@ -89,7 +128,11 @@ public class PerformanceMeter
         stopwatch.Stop();
         return (int)stopwatch.ElapsedMilliseconds;
     }
-    
+
+    /// <summary>
+    /// Измеряет время случайной выборки элементов из хэш-таблицы.
+    /// </summary>
+    /// <returns>Время выполнения в миллисекундах.</returns>
     public static int HashtableSelectRandom()
     {
         HousingDepartmentList.Clear();
@@ -112,7 +155,11 @@ public class PerformanceMeter
         stopwatch.Stop();
         return (int)stopwatch.ElapsedMilliseconds;
     }
-    
+
+    /// <summary>
+    /// Измеряет время случайной выборки элементов из массива.
+    /// </summary>
+    /// <returns>Время выполнения в миллисекундах.</returns>
     public static int ArraySelectRandom()
     {
         HousingDepartmentList.Clear();
