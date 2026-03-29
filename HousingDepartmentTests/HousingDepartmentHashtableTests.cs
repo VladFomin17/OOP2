@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OOP2.src;
-using OOP2.src.exception;
-using OOP2.Src.Subject;
+using OOP6.src;
+using OOP6.src.exception;
+using OOP6.Src.Subject;
 
 [TestClass]
 public class HousingDepartmentHashtableTests

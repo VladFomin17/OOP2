@@ -1,5 +1,5 @@
-﻿using OOP2.src.exception;
-using OOP2.Src.Subject;
+﻿using OOP6.src.exception;
+using OOP6.Src.Subject;
 
 [TestClass]
 public sealed class HousingDepartmentTests

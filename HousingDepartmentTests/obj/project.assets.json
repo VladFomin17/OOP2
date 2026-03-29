@@ -689,14 +689,14 @@
           }
         }
       },
-      "OOP2/1.0.0": {
+      "OOP6/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/OOP2.dll": {}
+          "bin/placeholder/OOP6.dll": {}
         },
         "runtime": {
-          "bin/placeholder/OOP2.dll": {}
+          "bin/placeholder/OOP6.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
@@ -1707,10 +1707,10 @@
         "version.txt"
       ]
     },
-    "OOP2/1.0.0": {
+    "OOP6/1.0.0": {
       "type": "project",
-      "path": "../OOP2/OOP2.csproj",
-      "msbuildProject": "../OOP2/OOP2.csproj"
+      "path": "../OOP6/OOP6.csproj",
+      "msbuildProject": "../OOP6/OOP6.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1719,7 +1719,7 @@
       "MSTest.Analyzers >= 4.1.0",
       "MSTest.TestAdapter >= 3.6.4",
       "Microsoft.NET.Test.Sdk >= 17.12.0",
-      "OOP2 >= 1.0.0"
+      "OOP6 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1754,8 +1754,8 @@
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
           "projectReferences": {
-            "C:\\Users\\влад\\RiderProjects\\OOP6\\OOP2\\OOP2.csproj": {
-              "projectPath": "C:\\Users\\влад\\RiderProjects\\OOP6\\OOP2\\OOP2.csproj"
+            "C:\\Users\\влад\\RiderProjects\\OOP6\\OOP6\\OOP6.csproj": {
+              "projectPath": "C:\\Users\\влад\\RiderProjects\\OOP6\\OOP6\\OOP6.csproj"
             }
           }
         }
